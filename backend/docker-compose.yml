@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build: .
+    image: omardoma/express-seed-project:v1
+    container_name: express-seed-project
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - webnet
+
+networks:
+  webnet:
